@@ -2,6 +2,18 @@
 Information
 ===========
 
+The original project is for UNIX/Linux, but not for Windows.
+In this repo, I modify the source code to make it available on Windows.
+The first step is to run complie.m using matlab.
+The second step is to compile learn.cpp (like Visual studio), 
+and move the executable file to the current directory.
+The third step is to modify globals.m, where the comments will 
+guide you to make the configuration. 
+
+The code is tested on windows 8 x64 successfully.
+
+The orignal README is shown below:
+
 Project webpage: http://www.cs.uchicago.edu/~pff/latent/.
 
 This is an implementation of our object detection system based on
