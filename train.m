@@ -210,7 +210,6 @@ for t = 1:iter
     blocks = readmodel(modfile, model);
     model = parsemodel(model, blocks);
     [labels, vals, unique] = readinfo(inffile);
-    
     % compute threshold for high recall
     P = find((labels == 1) .* unique);
     pos_vals = sort(vals(P));

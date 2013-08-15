@@ -23,12 +23,22 @@ for i = 1:length(I)
   while cnt > 0
     % + 2 to include the num non-zero blocks and example length
     info = fread(fin, labelsize+2, 'int32');
-    dim = info(end);
+    if length(info) == 0
+        dim = 0;
+    else
+        dim = info(end);
+    end
+    %dim = info(end);
     fseek(fin, dim*4, 0);
     cnt = cnt - 1;
   end
   y = fread(fin, labelsize+2, 'int32');
-  dim = y(end);
+  %//!
+  if length(y) == 0
+      dim = 0;
+  else
+      dim = y(end);
+  end
   x = fread(fin, dim, 'single');
   fwrite(fout, y, 'int32');
   fwrite(fout, x, 'single');

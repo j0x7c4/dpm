@@ -40,5 +40,5 @@ end
 
 % remove dat file if configured to do so
 if cleantmpdir
-  unix(['rm ' tmpdir cls '.dat']);
+  system(['rm ' tmpdir cls '.dat']);
 end
